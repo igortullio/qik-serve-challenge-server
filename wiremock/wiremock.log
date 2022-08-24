@@ -1,0 +1,260 @@
+2022-08-24 19:50:30.349 Verbose logging enabled
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2022-08-24 19:50:31.181 Verbose logging enabled
+ /$$      /$$ /$$                     /$$      /$$                     /$$      
+| $$  /$ | $$|__/                    | $$$    /$$$                    | $$      
+| $$ /$$$| $$ /$$  /$$$$$$   /$$$$$$ | $$$$  /$$$$  /$$$$$$   /$$$$$$$| $$   /$$
+| $$/$$ $$ $$| $$ /$$__  $$ /$$__  $$| $$ $$/$$ $$ /$$__  $$ /$$_____/| $$  /$$/
+| $$$$_  $$$$| $$| $$  \__/| $$$$$$$$| $$  $$$| $$| $$  \ $$| $$      | $$$$$$/ 
+| $$$/ \  $$$| $$| $$      | $$_____/| $$\  $ | $$| $$  | $$| $$      | $$_  $$ 
+| $$/   \  $$| $$| $$      |  $$$$$$$| $$ \/  | $$|  $$$$$$/|  $$$$$$$| $$ \  $$
+|__/     \__/|__/|__/       \_______/|__/     |__/ \______/  \_______/|__/  \__/
+
+port:                         8081
+enable-browser-proxying:      false
+disable-banner:               false
+no-request-journal:           false
+verbose:                      true
+
+2022-08-24 19:50:33.561 Request received:
+[0:0:0:0:0:0:0:1] - GET /products
+
+Host: [localhost:8081]
+Connection: [keep-alive]
+Accept: [application/json, text/plain, */*]
+User-Agent: [Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36]
+Sec-GPC: [1]
+Origin: [http://localhost:5173]
+Sec-Fetch-Site: [same-site]
+Sec-Fetch-Mode: [cors]
+Sec-Fetch-Dest: [empty]
+Referer: [http://localhost:5173/]
+Accept-Encoding: [gzip, deflate, br]
+Accept-Language: [en-US,en;q=0.9]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : [ {
+    "id" : "Dwt5F7KAhi",
+    "name" : "Amazing Pizza!",
+    "price" : 1099
+  }, {
+    "id" : "PWWe3w1SDU",
+    "name" : "Amazing Burger!",
+    "price" : 999
+  }, {
+    "id" : "C8GDyLrHJb",
+    "name" : "Amazing Salad!",
+    "price" : 499
+  }, {
+    "id" : "4MB7UfpTQs",
+    "name" : "Boring Fries!",
+    "price" : 199
+  } ],
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [28ba38f8-7f05-4d7e-8396-6828bcf583f2]
+
+
+2022-08-24 19:51:22.490 Request received:
+127.0.0.1 - GET /products/Dwt5F7KAhi
+
+Accept-Encoding: [gzip]
+User-Agent: [ReactorNetty/1.0.22]
+Host: [localhost:8081]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : {
+    "id" : "Dwt5F7KAhi",
+    "name" : "Amazing Pizza!",
+    "price" : 1099,
+    "promotions" : [ {
+      "id" : "ibt3EEYczW",
+      "type" : "QTY_BASED_PRICE_OVERRIDE",
+      "required_qty" : 2,
+      "price" : 1799
+    } ]
+  },
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [a96f2bb2-507a-4f3c-8bfa-38315d56e432]
+
+
+2022-08-24 19:51:22.563 Request received:
+127.0.0.1 - GET /products/PWWe3w1SDU
+
+Accept-Encoding: [gzip]
+User-Agent: [ReactorNetty/1.0.22]
+Host: [localhost:8081]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : {
+    "id" : "PWWe3w1SDU",
+    "name" : "Amazing Burger!",
+    "price" : 999,
+    "promotions" : [ {
+      "id" : "ZRAwbsO2qM",
+      "type" : "BUY_X_GET_Y_FREE",
+      "required_qty" : 2,
+      "free_qty" : 1
+    } ]
+  },
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [8158838b-2f61-44ef-b87a-b254d59ebd43]
+
+
+2022-08-24 19:51:22.579 Request received:
+127.0.0.1 - GET /products/C8GDyLrHJb
+
+Accept-Encoding: [gzip]
+User-Agent: [ReactorNetty/1.0.22]
+Host: [localhost:8081]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : {
+    "id" : "C8GDyLrHJb",
+    "name" : "Amazing Salad!",
+    "price" : 499,
+    "promotions" : [ {
+      "id" : "Gm1piPn7Fg",
+      "type" : "FLAT_PERCENT",
+      "amount" : 10
+    } ]
+  },
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [3183b336-aae7-4f36-ba7d-14836484ec44]
+
+
+2022-08-24 19:51:22.588 Request received:
+127.0.0.1 - GET /products/4MB7UfpTQs
+
+Accept-Encoding: [gzip]
+User-Agent: [ReactorNetty/1.0.22]
+Host: [localhost:8081]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : {
+    "id" : "4MB7UfpTQs",
+    "name" : "Boring Fries!",
+    "price" : 199,
+    "promotions" : [ ]
+  },
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [57217961-0b97-43b4-aac0-a5cd580c5339]
+
+
+2022-08-24 19:52:50.490 Request received:
+[0:0:0:0:0:0:0:1] - GET /products
+
+Host: [localhost:8081]
+Connection: [keep-alive]
+Accept: [application/json, text/plain, */*]
+User-Agent: [Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36]
+Sec-GPC: [1]
+Origin: [http://localhost:5173]
+Sec-Fetch-Site: [same-site]
+Sec-Fetch-Mode: [cors]
+Sec-Fetch-Dest: [empty]
+Referer: [http://localhost:5173/]
+Accept-Encoding: [gzip, deflate, br]
+Accept-Language: [en-US,en;q=0.9]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "jsonBody" : [ {
+    "id" : "Dwt5F7KAhi",
+    "name" : "Amazing Pizza!",
+    "price" : 1099
+  }, {
+    "id" : "PWWe3w1SDU",
+    "name" : "Amazing Burger!",
+    "price" : 999
+  }, {
+    "id" : "C8GDyLrHJb",
+    "name" : "Amazing Salad!",
+    "price" : 499
+  }, {
+    "id" : "4MB7UfpTQs",
+    "name" : "Boring Fries!",
+    "price" : 199
+  } ],
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [28ba38f8-7f05-4d7e-8396-6828bcf583f2]
+
+
+2022-08-24 19:54:17.524 Admin request received:
+127.0.0.1 - POST /shutdown
+
+Host: [localhost:8081]
+User-Agent: [curl/7.79.1]
+Accept: [*/*]
+
+
