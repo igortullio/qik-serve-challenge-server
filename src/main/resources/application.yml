@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: qik-server-challenge-server
+
+custom:
+  integration:
+    wiremock:
+      url: http://localhost:8081
