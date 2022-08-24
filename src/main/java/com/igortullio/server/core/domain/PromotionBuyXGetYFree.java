@@ -31,13 +31,15 @@ public class PromotionBuyXGetYFree extends Promotion {
     public BigDecimal calculate(Product product) {
         if (product.quantity() < getRequiredQty()) return BigDecimal.ZERO;
 
-        Integer requiredQty = getRequiredQty();
-        Integer quantity = product.quantity();
-        Integer freeQuantity = quantity / requiredQty;
-
-        BigDecimal payableQuantity = BigDecimal.valueOf(quantity - freeQuantity);
+        Integer freeQuantity = calculateFreeItem(product.quantity(), getRequiredQty(), getFreeQty());
+        BigDecimal payableQuantity = BigDecimal.valueOf(product.quantity() - freeQuantity);
         BigDecimal totalProductPayable = product.price().multiply(payableQuantity);
         return product.totalRaw().subtract(totalProductPayable);
+    }
+
+    public static Integer calculateFreeItem(Integer quantity, Integer requiredQty, Integer freeCount) {
+        Integer rate = quantity / requiredQty;
+        return rate * freeCount;
     }
 
 }
